@@ -20,8 +20,8 @@ public class InsertVehiculo {
 			con = Conexion.getConnection();
 
 			String sql = """
-					INSERT INTO vehiculos(placa, marca, modelo, anio, precio, color, disponible)
-					VALUES(?,?,?,?,?,?,?)
+					INSERT INTO vehiculos(placa, marca, modelo, anio, precio, color, disponible, kilometraje)
+					VALUES(?,?,?,?,?,?,?,?)
 					""";
 			ps = con.prepareStatement(sql);
 
@@ -33,6 +33,7 @@ public class InsertVehiculo {
 			ps.setDouble(5, 8000.0);
 			ps.setString(6, "negro");
 			ps.setBoolean(7, true);
+			ps.setInt(8, 53000);
 			ps.executeUpdate(); 
 
 			// --- Vehículo 2 ---
@@ -43,6 +44,7 @@ public class InsertVehiculo {
 			ps.setDouble(5, 18500.0);
 			ps.setString(6, "blanco");
 			ps.setBoolean(7, true);
+			ps.setInt(8, 153000);
 			ps.executeUpdate(); 
 
 			// --- Vehículo 3 ---
@@ -53,6 +55,7 @@ public class InsertVehiculo {
 			ps.setDouble(5, 15000.0);
 			ps.setString(6, "gris");
 			ps.setBoolean(7, true);
+			ps.setInt(8, 35573);
 			ps.executeUpdate(); 
 
 			// --- Vehículo 4 ---
@@ -63,6 +66,7 @@ public class InsertVehiculo {
 			ps.setDouble(5, 10500.0);
 			ps.setString(6, "rojo");
 			ps.setBoolean(7, false);
+			ps.setInt(8, 763930);
 			ps.executeUpdate(); 
 
 			// --- Vehículo 5 ---
@@ -73,6 +77,7 @@ public class InsertVehiculo {
 			ps.setDouble(5, 22000.0);
 			ps.setString(6, "azul");
 			ps.setBoolean(7, true);
+			ps.setInt(8, 34500);
 			ps.executeUpdate();
 
 			int filas = ps.executeUpdate();

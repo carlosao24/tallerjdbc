@@ -21,14 +21,15 @@ public class UpdateVehiculo {
 			
 			String sql = """
 					
-					UPDATE vehiculos SET marca = ?, precio = ? 
+					UPDATE vehiculos SET marca = ?, precio = ?, kilometraje = ?
 					WHERE placa = ?
 					
 					""";
 			ps = con.prepareStatement(sql);
 			ps.setString(1, "Chevrolet Aveo Family");
 			ps.setDouble(2, 8500.0);
-			ps.setString(3, "hbc-389");
+			ps.setInt(3, 67904);
+			ps.setString(4, "hbc-389");
 			
 			int filas = ps.executeUpdate();
 			
